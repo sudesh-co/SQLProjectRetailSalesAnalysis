@@ -166,13 +166,13 @@ SELECT
 FROM hourly_sale
 GROUP BY shift;
 
-![result](https://raw.githubusercontent.com/sudesh-co/SQLProjectRetailSalesAnalysis/main/Screenshot%202025-05-06%20075327.png)
-![result](https://raw.githubusercontent.com/sudesh-co/SQLProjectRetailSalesAnalysis/main/Screenshot%202025-05-06%20075344.png)
-![result](https://raw.githubusercontent.com/sudesh-co/SQLProjectRetailSalesAnalysis/main/Screenshot%202025-05-06%20075353.png)
 
 
 
 ## Findings
+![result](https://raw.githubusercontent.com/sudesh-co/SQLProjectRetailSalesAnalysis/main/Screenshot%202025-05-06%20075327.png)
+![result](https://raw.githubusercontent.com/sudesh-co/SQLProjectRetailSalesAnalysis/main/Screenshot%202025-05-06%20075344.png)
+![result](https://raw.githubusercontent.com/sudesh-co/SQLProjectRetailSalesAnalysis/main/Screenshot%202025-05-06%20075353.png)
 
 ### Customer Demographics
 - The dataset includes customers from various age groups.
