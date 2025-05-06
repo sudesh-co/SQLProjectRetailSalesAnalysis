@@ -21,11 +21,6 @@ I have built this project to demonstrate my SQL skills and techniques typically 
 ## Project Structure
 
 ### 1. Database Setup
-
-![result](./Screenshot%202025-05-06%20075327.png)
-![result](./Screenshot%202025-05-06%20075344.png)
-![result](./Screenshot%202025-05-06%20075353.png)
-
 ```sql
 CREATE DATABASE p1_retail_db;
 
@@ -44,9 +39,7 @@ CREATE TABLE retail_sales (
 );
 
 2. Data Exploration & Cleaning
-sql
-Copy
-Edit
+
 -- Total record count
 SELECT COUNT(*) FROM retail_sales;
 
@@ -69,9 +62,7 @@ WHERE sale_date IS NULL OR sale_time IS NULL OR customer_id IS NULL OR
       quantity IS NULL OR price_per_unit IS NULL OR cogs IS NULL;
 3. Data Analysis & Findings
 1. Sales on '2022-11-05'
-sql
-Copy
-Edit
+
 SELECT * FROM retail_sales
 WHERE sale_date = '2022-11-05';
 2. Clothing category with quantity > 4 in Nov-2022
@@ -83,9 +74,7 @@ WHERE category = 'Clothing'
   AND TO_CHAR(sale_date, 'YYYY-MM') = '2022-11'
   AND quantity >= 4;
 3. Total sales for each category
-sql
-Copy
-Edit
+
 SELECT 
     category,
     SUM(total_sale) AS net_sale,
@@ -93,22 +82,16 @@ SELECT
 FROM retail_sales
 GROUP BY category;
 4. Average age of customers who purchased 'Beauty' products
-sql
-Copy
-Edit
+
 SELECT ROUND(AVG(age), 2) AS avg_age
 FROM retail_sales
 WHERE category = 'Beauty';
 5. Transactions with total_sale > 1000
-sql
-Copy
-Edit
+
 SELECT * FROM retail_sales
 WHERE total_sale > 1000;
 6. Transaction count by gender and category
-sql
-Copy
-Edit
+
 SELECT 
     category,
     gender,
@@ -117,9 +100,7 @@ FROM retail_sales
 GROUP BY category, gender
 ORDER BY category;
 7. Best-selling month each year (by avg sale)
-sql
-Copy
-Edit
+
 SELECT year, month, avg_sale
 FROM (
     SELECT 
@@ -132,9 +113,7 @@ FROM (
 ) AS ranked_sales
 WHERE rank = 1;
 8. Top 5 customers by total sales
-sql
-Copy
-Edit
+
 SELECT 
     customer_id,
     SUM(total_sale) AS total_sales
@@ -143,18 +122,14 @@ GROUP BY customer_id
 ORDER BY total_sales DESC
 LIMIT 5;
 9. Unique customers per category
-sql
-Copy
-Edit
+
 SELECT 
     category,
     COUNT(DISTINCT customer_id) AS cnt_unique_cs
 FROM retail_sales
 GROUP BY category;
 10. Order count by shift
-sql
-Copy
-Edit
+
 WITH hourly_sale AS (
     SELECT *,
         CASE
@@ -170,9 +145,11 @@ SELECT
 FROM hourly_sale
 GROUP BY shift;
 
+```
 
-
-![Sales Dashboard Screenshot](./Screenshot%202025-05-05%20232454.png)
+![result](./Screenshot%202025-05-06%20075327.png)
+![result](./Screenshot%202025-05-06%20075344.png)
+![result](./Screenshot%202025-05-06%20075353.png)
 
 ## Findings
 ### Customer Demographics
@@ -221,5 +198,5 @@ The findings can help drive business decisions by understanding sales patterns, 
 
 ### 1. Clone the Repository
 Clone this project repository from GitHub:
-```bash
+
 git clone [<repository_url>](https://github.com/sudesh-co/SQLProjectRetailSalesAnalysis/)
