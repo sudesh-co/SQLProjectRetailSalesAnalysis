@@ -60,6 +60,7 @@ DELETE FROM retail_sales
 WHERE sale_date IS NULL OR sale_time IS NULL OR customer_id IS NULL OR 
       gender IS NULL OR age IS NULL OR category IS NULL OR 
       quantity IS NULL OR price_per_unit IS NULL OR cogs IS NULL;
+
 3. Data Analysis & Findings
 1. Sales on '2022-11-05'
 
@@ -73,25 +74,25 @@ SELECT * FROM retail_sales
 WHERE category = 'Clothing'
   AND TO_CHAR(sale_date, 'YYYY-MM') = '2022-11'
   AND quantity >= 4;
-3. Total sales for each category
 
+3. Total sales for each category
 SELECT 
     category,
     SUM(total_sale) AS net_sale,
     COUNT(*) AS total_orders
 FROM retail_sales
 GROUP BY category;
-4. Average age of customers who purchased 'Beauty' products
 
+4. Average age of customers who purchased 'Beauty' products
 SELECT ROUND(AVG(age), 2) AS avg_age
 FROM retail_sales
 WHERE category = 'Beauty';
-5. Transactions with total_sale > 1000
 
+5. Transactions with total_sale > 1000
 SELECT * FROM retail_sales
 WHERE total_sale > 1000;
-6. Transaction count by gender and category
 
+6. Transaction count by gender and category
 SELECT 
     category,
     gender,
@@ -99,8 +100,8 @@ SELECT
 FROM retail_sales
 GROUP BY category, gender
 ORDER BY category;
-7. Best-selling month each year (by avg sale)
 
+7. Best-selling month each year (by avg sale)
 SELECT year, month, avg_sale
 FROM (
     SELECT 
@@ -112,8 +113,8 @@ FROM (
     GROUP BY 1, 2
 ) AS ranked_sales
 WHERE rank = 1;
-8. Top 5 customers by total sales
 
+8. Top 5 customers by total sales
 SELECT 
     customer_id,
     SUM(total_sale) AS total_sales
@@ -121,15 +122,15 @@ FROM retail_sales
 GROUP BY customer_id
 ORDER BY total_sales DESC
 LIMIT 5;
-9. Unique customers per category
 
+9. Unique customers per category
 SELECT 
     category,
     COUNT(DISTINCT customer_id) AS cnt_unique_cs
 FROM retail_sales
 GROUP BY category;
-10. Order count by shift
 
+10. Order count by shift
 WITH hourly_sale AS (
     SELECT *,
         CASE
@@ -166,14 +167,6 @@ GROUP BY shift;
 - The analysis identifies the top-spending customers.
 - The most popular product categories are also highlighted.
 
-## Reports
-
-### Sales Summary
-A detailed report summarizing:
-- Total sales
-- Customer demographics
-- Category performance
-
 ### Trend Analysis
 Insights into:
 - Sales trends across different months
@@ -199,4 +192,4 @@ The findings can help drive business decisions by understanding sales patterns, 
 ### 1. Clone the Repository
 Clone this project repository from GitHub:
 
-git clone [<repository_url>](https://github.com/sudesh-co/SQLProjectRetailSalesAnalysis/)
+git clone https://github.com/sudesh-co/SQLProjectRetailSalesAnalysis/
