@@ -166,9 +166,10 @@ SELECT
 FROM hourly_sale
 GROUP BY shift;
 
-![Image Alt Text](https://github.com/sudesh-co/SQLProjectRetailSalesAnalysis/blob/main/Screenshot%202025-05-06%20075327.png)
-![Image Alt Text](https://github.com/sudesh-co/SQLProjectRetailSalesAnalysis/blob/main/Screenshot%202025-05-06%20075344.png)
-![Image Alt Text](https://github.com/sudesh-co/SQLProjectRetailSalesAnalysis/blob/main/Screenshot%202025-05-06%20075353.png)
+![result](https://raw.githubusercontent.com/sudesh-co/SQLProjectRetailSalesAnalysis/main/Screenshot%202025-05-06%20075327.png)
+![result](https://raw.githubusercontent.com/sudesh-co/SQLProjectRetailSalesAnalysis/main/Screenshot%202025-05-06%20075344.png)
+![result](https://raw.githubusercontent.com/sudesh-co/SQLProjectRetailSalesAnalysis/main/Screenshot%202025-05-06%20075353.png)
+
 
 
 ## Findings
