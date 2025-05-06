@@ -22,6 +22,10 @@ I have built this project to demonstrate my SQL skills and techniques typically 
 
 ### 1. Database Setup
 
+![result](./Screenshot%202025-05-06%20075327.png)
+![result](./Screenshot%202025-05-06%20075344.png)
+![result](./Screenshot%202025-05-06%20075353.png)
+
 ```sql
 CREATE DATABASE p1_retail_db;
 
@@ -171,11 +175,6 @@ GROUP BY shift;
 ![Sales Dashboard Screenshot](./Screenshot%202025-05-05%20232454.png)
 
 ## Findings
-![result](./Screenshot%202025-05-06%20075327.png)
-![result](./Screenshot%202025-05-06%20075344.png)
-![result](./Screenshot%202025-05-06%20075353.png)
-
-
 ### Customer Demographics
 - The dataset includes customers from various age groups.
 - Sales are distributed across different categories, including Clothing and Beauty.
